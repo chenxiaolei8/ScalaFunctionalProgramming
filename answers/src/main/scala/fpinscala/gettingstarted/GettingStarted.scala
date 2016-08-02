@@ -40,6 +40,8 @@ object MyModule {
   // 0 and 1 are the first two numbers in the sequence,
   // so we start the accumulators with those.
   // At every iteration, we add the two numbers to get the next one.
+  //递归函数,来获取第N个斐波那契数,前两个斐波那契数0和1,第N个数总是等于前两个数的和
+  //序列开始为 0,1,1,2,3,5
   def fib(n: Int): Int = {
     @annotation.tailrec
     def loop(n: Int, prev: Int, cur: Int): Int =
@@ -136,6 +138,7 @@ object PolymorphicFunctions {
 
   // Exercise 2: Implement a polymorphic function to check whether
   // an `Array[A]` is sorted
+  //实现isSorted方法,检测Array[A]是否按照给定的比较函数排序
   def isSorted[A](as: Array[A], gt: (A,A) => Boolean): Boolean = {
     @annotation.tailrec
     def go(n: Int): Boolean =
